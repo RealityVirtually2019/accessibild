@@ -8,3 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/Main.unity
     guid: a1b0f7258e74183448269ed771228b77
+  - enabled: 1
+    path: Assets/Scene/BathRoomScanning.unity
+    guid: 139ccbf669ba8ef48a54c9def9728818

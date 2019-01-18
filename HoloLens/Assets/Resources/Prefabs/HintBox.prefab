@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 4058145488906598}
   - component: {fileID: 114013515972518564}
   - component: {fileID: 114888483373876264}
+  - component: {fileID: 114551940184250912}
   m_Layer: 0
   m_Name: HintBox
   m_TagString: Untagged
@@ -284,6 +285,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pivotAxis: 1
   targetTransform: {fileID: 0}
+--- !u!114 &114551940184250912
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1408830238129952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2462a575c781614bbf346383206ebe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114888483373876264
 MonoBehaviour:
   m_ObjectHideFlags: 1

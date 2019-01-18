@@ -152,6 +152,38 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224274799007377588, guid: a83ce2c3d470c7e4b95885254b45225c,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 634
+      objectReference: {fileID: 0}
+    - target: {fileID: 224274799007377588, guid: a83ce2c3d470c7e4b95885254b45225c,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 414
+      objectReference: {fileID: 0}
+    - target: {fileID: 114938433566069612, guid: a83ce2c3d470c7e4b95885254b45225c,
+        type: 2}
+      propertyPath: m_Text
+      value: 'Hello Text Text Text
+
+        even more Text'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114938433566069612, guid: a83ce2c3d470c7e4b95885254b45225c,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0.19607842
+      objectReference: {fileID: 0}
+    - target: {fileID: 114938433566069612, guid: a83ce2c3d470c7e4b95885254b45225c,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.19607842
+      objectReference: {fileID: 0}
+    - target: {fileID: 114938433566069612, guid: a83ce2c3d470c7e4b95885254b45225c,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0.19607842
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a83ce2c3d470c7e4b95885254b45225c, type: 2}
   m_IsPrefabParent: 0
@@ -195,3 +227,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6559f16c3e42f9b4cb6da58afffc679f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MeshingMaterial: {fileID: 2100000, guid: e53277d1a5c530447a7b4138f73b4396, type: 2}
