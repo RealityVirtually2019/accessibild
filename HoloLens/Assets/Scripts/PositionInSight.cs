@@ -1,16 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using HoloToolkit.Unity;
 using UnityEngine;
 
-public class PositionInSight : MonoBehaviour {
+public class PositionInSight : MonoBehaviour
+{
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public Vector3 DesiredPosition = new Vector3(0, 0, 1);
+
+    // Use this for initialization
+    void Start()
+    {
+        transform.position = CameraCache.Main.transform.position + DesiredPosition;
+        GetComponent<SphereBasedTagalong>().enabled = true;
+    }
+
 }
