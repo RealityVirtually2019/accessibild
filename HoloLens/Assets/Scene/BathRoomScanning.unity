@@ -152,41 +152,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224274799007377588, guid: a83ce2c3d470c7e4b95885254b45225c,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 634
-      objectReference: {fileID: 0}
-    - target: {fileID: 224274799007377588, guid: a83ce2c3d470c7e4b95885254b45225c,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 414
-      objectReference: {fileID: 0}
-    - target: {fileID: 114938433566069612, guid: a83ce2c3d470c7e4b95885254b45225c,
-        type: 2}
-      propertyPath: m_Text
-      value: 'Move your head and look around the room
-
-        and Scan the Floor.
-
-
-        Tap to check for ADA compliance'
-      objectReference: {fileID: 0}
-    - target: {fileID: 114938433566069612, guid: a83ce2c3d470c7e4b95885254b45225c,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 0.24329586
-      objectReference: {fileID: 0}
-    - target: {fileID: 114938433566069612, guid: a83ce2c3d470c7e4b95885254b45225c,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0.6115023
-      objectReference: {fileID: 0}
-    - target: {fileID: 114938433566069612, guid: a83ce2c3d470c7e4b95885254b45225c,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.9191176
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a83ce2c3d470c7e4b95885254b45225c, type: 2}
   m_IsPrefabParent: 0
@@ -243,7 +208,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8f31fe96d1486eb4191f468b7abf7d2b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 438991f3f2e179f4289b3bba63b6dae9, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -323,7 +288,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 20a8ae5fcd920f248a1b7131a4742fbb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 80028fe5d6aaf5540929926141d0d9f3, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

@@ -320,7 +320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.24329586, g: 0.6115023, b: 0.9191176, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -340,7 +340,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Hello Text '
+  m_Text: 'Move your head and look around the room
+
+    and Scan the Floor.
+
+
+    Tap to check for ADA compliance'
 --- !u!222 &222210603674594144
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -383,7 +388,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 634, y: 414}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224719349587992300
 RectTransform:
