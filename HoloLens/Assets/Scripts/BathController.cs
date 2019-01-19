@@ -67,7 +67,12 @@ public class BathController : MonoBehaviour, HoloToolkit.Unity.InputModule.IInpu
     // Update is called once per frame
     void Update()
     {
-        if (GazeManager.Instance.HitPosition != Vector3.zero && GazeManager.Instance.HitNormal.y > 0.9F && GazeManager.Instance.HitPosition.y < _floorHeight)
+        if (GazeManager.Instance.HitPosition != Vector3.zero 
+            && GazeManager.Instance.GazeNormal.y < 0.6F
+            && GazeManager.Instance.HitNormal.y > 0.9F 
+            && GazeManager.Instance.HitPosition.y < _floorHeight
+            && GazeManager.Instance.HitInfo.distance < 2F
+            )
         {
             var material = SpatialMappingManager.Instance.SurfaceMaterial;
             _floorHeight = GazeManager.Instance.HitPosition.y;
