@@ -61,7 +61,7 @@ public class BathController : MonoBehaviour, HoloToolkit.Unity.InputModule.IInpu
         {
             var material = SpatialMappingManager.Instance.SurfaceMaterial;
             _floorHeight = GazeManager.Instance.HitPosition.y;
-            material.SetVector("_ClipPlane", new Vector4(0f, -1f, 0f, (_floorHeight - .1f) * -1));
+            material.SetVector("_ClipPlane", new Vector4(0f, -1f, 0f, (_floorHeight + .1f) * -1));
             SpatialMappingManager.Instance.SetSurfaceMaterial(material);
         }
     }
