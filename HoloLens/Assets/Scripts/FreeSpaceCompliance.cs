@@ -21,7 +21,7 @@ public class FreeSpaceCompliance : MonoBehaviour
         float y = (_discHeight - _transform.parent.localPosition.y) / 2F;
         _transform.localScale = new Vector3(_transform.localScale.x, y, _transform.localScale.z);
         _transform.localPosition = new Vector3(_transform.localPosition.x, y, _transform.localPosition.z);
-        SendMessage("SetDiscDiameter", _discDiameter);
+        SendMessageUpwards("SetDiscDiameter", _discDiameter);
     }
 
 

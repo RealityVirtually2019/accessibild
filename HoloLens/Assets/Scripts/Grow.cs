@@ -11,6 +11,7 @@ public class Grow : MonoBehaviour
     public UnityEvent SizingDone;
     private Renderer _renderer;
     public Text ToUpdateText;
+    private Rigidbody _rigid;
 
     public float CurrentSize = 1.414213562373095F;
     private float _maxSize;
@@ -18,8 +19,10 @@ public class Grow : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        _rigid = GetComponent<Rigidbody>();
         _trans = transform;
         _renderer = GetComponentInChildren<Renderer>();
+        //Invoke("Growing", 0.1f);
     }
 
     public void SetDiscDiameter(float size)
@@ -30,6 +33,7 @@ public class Grow : MonoBehaviour
     private void FixedUpdate()
     {
         _trans.localScale = Vector3.Scale(_trans.localScale, GrowRate);
+        //Invoke("Growing", 0.1f);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -37,12 +41,20 @@ public class Grow : MonoBehaviour
         //Magic number =/ don't like it 
         if (collision.impulse.sqrMagnitude > 100F)
         {
-            if (SizingDone != null)
-            {
-                SizingDone.Invoke();
-            }
-            Destroy(this);
+            ShutDown();
         }
+    }
+
+    private void ShutDown()
+    {
+        CancelInvoke("Growing");
+        if (SizingDone != null)
+        {
+
+            SizingDone.Invoke();
+        }
+        Destroy(_rigid);
+        Destroy(this);
     }
 
     // Update is called once per frame
@@ -55,11 +67,7 @@ public class Grow : MonoBehaviour
             SizeChanged.Invoke();
             if (CurrentSize > _maxSize + (0.05 * _maxSize))
             {
-                if (SizingDone != null)
-                {
-                    SizingDone.Invoke();
-                }
-                Destroy(this);
+                ShutDown();
             }
         }
 
