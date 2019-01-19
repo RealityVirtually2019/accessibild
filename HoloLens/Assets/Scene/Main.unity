@@ -278,6 +278,126 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 617847692}
   m_Script: {fileID: 11500000, guid: 0decd33ba8702954885a62b5bc1a778e, type: 3}
+--- !u!1 &665773671
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 665773676}
+  - component: {fileID: 665773672}
+  - component: {fileID: 665773673}
+  - component: {fileID: 665773674}
+  - component: {fileID: 665773675}
+  m_Layer: 0
+  m_Name: Menu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &665773672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 665773671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 631c503c5f61f99498c94335c39dae21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ButtonPrefab: {fileID: 114985427041226018, guid: dc25f30298e5957498e67017b4d85807,
+    type: 2}
+  ClickSound: {fileID: 8300000, guid: 464b67614956ee54abeeee6ed2763943, type: 3}
+  MenuEntries:
+  - Text: Hallway
+    SceneNameToLoad: 
+    Enabled: 0
+    BtnImage: {fileID: 2800000, guid: 934273a65cef8fb4d96710152db9d1bc, type: 3}
+  - Text: Bathroom
+    SceneNameToLoad: BathRoomScanning
+    Enabled: 1
+    BtnImage: {fileID: 2800000, guid: dbe199d448336f3419e0d585f421a15a, type: 3}
+  - Text: Ramp
+    SceneNameToLoad: 
+    Enabled: 0
+    BtnImage: {fileID: 2800000, guid: 35d787c4cec02384b9206d781629b648, type: 3}
+  - Text: Entrance
+    SceneNameToLoad: 
+    Enabled: 0
+    BtnImage: {fileID: 2800000, guid: a2067d71adae10f439103c23986ed5b3, type: 3}
+--- !u!114 &665773673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 665773671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74154c01851d1174b89ac67209b1d140, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NodeList: []
+  SurfaceType: 2
+  SortType: 0
+  OrientType: 1
+  LayoutType: 1
+  IgnoreInactiveTransforms: 1
+  Radius: 1.2
+  radialRange: 180
+  Rows: 2
+  CellWidth: 0.13
+  CellHeight: 0.13
+  horizontalMargin: 0.05
+  verticalMargin: 0.05
+  depthMargin: 0.2
+  SphereMesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  CylinderMesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &665773674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 665773671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 456eda422e1dc4c4cb4fd6c25cbc2fbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SphereRadius: 0.1
+  MoveSpeed: 3
+  useUnscaledTime: 1
+  hideOnStart: 0
+  debugDisplaySphere: 0
+  debugDisplayTargetPosition: 0
+--- !u!114 &665773675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 665773671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac8d5b128a1d8204fb76c86f47b75912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pivotAxis: 1
+  targetTransform: {fileID: 0}
+--- !u!4 &665773676
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 665773671}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1062434772
 Prefab:
   m_ObjectHideFlags: 0
@@ -345,7 +465,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1744005413
 Transform:
   m_ObjectHideFlags: 0

@@ -42,6 +42,13 @@ namespace HoloToolkit.Unity.Buttons
 
         private const float AlphaThreshold = 0.01f;
 
+        public void SetIconOverride(Texture2D texture)
+        {
+            OverrideIcon = true;
+            iconOverride = texture;
+            SetIconName("dontcare");
+        }
+
         /// <summary>
         /// Property to use in IconMaterial for alpha control
         /// Useful for animating icon transparency
