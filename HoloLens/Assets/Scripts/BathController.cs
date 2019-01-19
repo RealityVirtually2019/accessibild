@@ -7,12 +7,23 @@ public class BathController : MonoBehaviour, HoloToolkit.Unity.InputModule.IInpu
 
     public Material MeshingMaterial;
 
+    public GameObject DiscPrefab;
+
     public void OnInputClicked(InputClickedEventData eventData)
     {
         Vector3 clickRay;
         if (eventData.InputSource.TryGetGripPosition(eventData.SourceId, out clickRay))
         {
-            HintBox.Instance.ShowText("Ray:" + (clickRay - CameraCache.Main.transform.position));
+            Vector3 rayDirection = (clickRay - CameraCache.Main.transform.position);
+            HintBox.Instance.ShowText("Ray:" + rayDirection);
+            RaycastHit hitInfo;
+            if (Physics.Raycast(CameraCache.Main.transform.position, rayDirection, out hitInfo))
+            {
+                if (hitInfo.normal.y > 0.7F)
+                {//is point pretty much up
+                    Instantiate(DiscPrefab, hitInfo.point, Quaternion.identity);
+                }
+            }
         }
         else
         {

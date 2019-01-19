@@ -228,3 +228,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MeshingMaterial: {fileID: 2100000, guid: e53277d1a5c530447a7b4138f73b4396, type: 2}
+  DiscPrefab: {fileID: 1407372254954754, guid: 8f1b42382a6b32b48869ba1b15f8a5ec, type: 2}
