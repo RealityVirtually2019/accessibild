@@ -28,6 +28,8 @@ public class MainMenu : MonoBehaviour
     private string currentActiveOption;
     private KeywordRecognizer keywordRecognizer;
 
+    private Dictionary<string, string> _keywordToScene = new Dictionary<string, string>();
+
     // Use this for initialization
     void Start()
     {
@@ -60,6 +62,7 @@ public class MainMenu : MonoBehaviour
                 transform = btn.transform
             });
             keywords.Add(MenuPreWord + item.Text);
+            _keywordToScene[MenuPreWord + item.Text] = item.SceneNameToLoad;
 
             btn.enabled = item.Enabled;
             var audioSrc = btn.gameObject.AddComponent<AudioSource>();
@@ -96,9 +99,9 @@ public class MainMenu : MonoBehaviour
                 SceneManager.UnloadSceneAsync(currentActiveOption);
                 break;
             default:
-                if (!args.text.StartsWith(MenuPreWord)) return;
+                if (_keywordToScene.ContainsKey(args.text)) return;
                 {
-                    LoadMenuItem(args.text.Substring(MenuPreWord.Length), GetComponentInChildren<AudioSource>());
+                    LoadMenuItem(_keywordToScene[args.text], GetComponentInChildren<AudioSource>());
                 }
                 break;
         }
