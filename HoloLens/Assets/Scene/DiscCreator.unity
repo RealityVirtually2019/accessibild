@@ -113,6 +113,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &41694389 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1124864142206996, guid: 8f1b42382a6b32b48869ba1b15f8a5ec,
+    type: 2}
+  m_PrefabInternal: {fileID: 1679444601}
 --- !u!1 &1261203539
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,12 +197,17 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1261203539}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.66, y: 0, z: 2.37}
+  m_LocalPosition: {x: -1.79, y: 0, z: -0.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1337845082 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1164058876148726, guid: 8f1b42382a6b32b48869ba1b15f8a5ec,
+    type: 2}
+  m_PrefabInternal: {fileID: 1679444601}
 --- !u!1 &1415292381
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,7 +286,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1415292381}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.25, y: 0, z: 7.46}
+  m_LocalPosition: {x: 0.29, y: 0, z: 5.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -361,7 +371,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1577462232}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03, y: 0, z: -0.93}
+  m_LocalPosition: {x: -2.14, y: 0, z: 4.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -439,6 +449,16 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114323774176263350, guid: 8f1b42382a6b32b48869ba1b15f8a5ec,
+        type: 2}
+      propertyPath: SizingDonePositive.m_PersistentCalls.m_Calls.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114323774176263350, guid: 8f1b42382a6b32b48869ba1b15f8a5ec,
+        type: 2}
+      propertyPath: SizingDoneNegative.m_PersistentCalls.m_Calls.Array.size
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4120582268198866, guid: 8f1b42382a6b32b48869ba1b15f8a5ec, type: 2}
       propertyPath: m_LocalPosition.x
       value: -1.04
@@ -471,6 +491,81 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 114323774176263350, guid: 8f1b42382a6b32b48869ba1b15f8a5ec,
+        type: 2}
+      propertyPath: SizingDonePositive.m_PersistentCalls.m_Calls.Array.data[6].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114323774176263350, guid: 8f1b42382a6b32b48869ba1b15f8a5ec,
+        type: 2}
+      propertyPath: SizingDonePositive.m_PersistentCalls.m_Calls.Array.data[6].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114323774176263350, guid: 8f1b42382a6b32b48869ba1b15f8a5ec,
+        type: 2}
+      propertyPath: SizingDoneNegative.m_PersistentCalls.m_Calls.Array.data[6].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114323774176263350, guid: 8f1b42382a6b32b48869ba1b15f8a5ec,
+        type: 2}
+      propertyPath: SizingDoneNegative.m_PersistentCalls.m_Calls.Array.data[6].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114323774176263350, guid: 8f1b42382a6b32b48869ba1b15f8a5ec,
+        type: 2}
+      propertyPath: SizingDonePositive.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 1337845082}
+    - target: {fileID: 114323774176263350, guid: 8f1b42382a6b32b48869ba1b15f8a5ec,
+        type: 2}
+      propertyPath: SizingDoneNegative.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 1337845082}
+    - target: {fileID: 114323774176263350, guid: 8f1b42382a6b32b48869ba1b15f8a5ec,
+        type: 2}
+      propertyPath: SizingDonePositive.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 114323774176263350, guid: 8f1b42382a6b32b48869ba1b15f8a5ec,
+        type: 2}
+      propertyPath: SizingDonePositive.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114323774176263350, guid: 8f1b42382a6b32b48869ba1b15f8a5ec,
+        type: 2}
+      propertyPath: SizingDoneNegative.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 114323774176263350, guid: 8f1b42382a6b32b48869ba1b15f8a5ec,
+        type: 2}
+      propertyPath: SizingDoneNegative.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114323774176263350, guid: 8f1b42382a6b32b48869ba1b15f8a5ec,
+        type: 2}
+      propertyPath: SizingDonePositive.m_PersistentCalls.m_Calls.Array.data[7].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114323774176263350, guid: 8f1b42382a6b32b48869ba1b15f8a5ec,
+        type: 2}
+      propertyPath: SizingDonePositive.m_PersistentCalls.m_Calls.Array.data[7].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114323774176263350, guid: 8f1b42382a6b32b48869ba1b15f8a5ec,
+        type: 2}
+      propertyPath: SizingDoneNegative.m_PersistentCalls.m_Calls.Array.data[7].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114323774176263350, guid: 8f1b42382a6b32b48869ba1b15f8a5ec,
+        type: 2}
+      propertyPath: SizingDoneNegative.m_PersistentCalls.m_Calls.Array.data[7].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114323774176263350, guid: 8f1b42382a6b32b48869ba1b15f8a5ec,
+        type: 2}
+      propertyPath: SizingDonePositive.m_PersistentCalls.m_Calls.Array.data[7].m_Target
+      value: 
+      objectReference: {fileID: 41694389}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f1b42382a6b32b48869ba1b15f8a5ec, type: 2}
   m_IsPrefabParent: 0
@@ -614,7 +709,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1833550237}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.29, y: 0, z: 0.1}
+  m_LocalPosition: {x: 5.02, y: 0, z: -0.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

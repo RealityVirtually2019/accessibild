@@ -12,6 +12,7 @@ public class BathController : MonoBehaviour, HoloToolkit.Unity.InputModule.IInpu
     public GameObject DiscPrefab;
 
     private float _floorHeight = 1.3f;
+    private List<GameObject> _discs = new List<GameObject>();
 
     public void OnInputClicked(InputClickedEventData eventData)
     {
@@ -24,7 +25,7 @@ public class BathController : MonoBehaviour, HoloToolkit.Unity.InputModule.IInpu
             {
                 if (hitInfo.normal.y > 0.7F)
                 {//is point pretty much up
-                    Instantiate(DiscPrefab, hitInfo.point, Quaternion.identity);
+                    _discs.Add(Instantiate(DiscPrefab, hitInfo.point, Quaternion.identity));
                 }
             }
         }
@@ -52,6 +53,10 @@ public class BathController : MonoBehaviour, HoloToolkit.Unity.InputModule.IInpu
             SpatialMappingManager.Instance.DrawVisualMeshes = false;
         }
         HintBox.Instance.ShowText("");
+        foreach (var item in _discs)
+        {
+            Destroy(item);
+        }
     }
 
 

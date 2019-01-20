@@ -75,6 +75,8 @@ public class MainMenu : MonoBehaviour
         }
         collection.UpdateCollection();
         keywords.Add("main menu");
+        keywords.Add("start analyzing");
+        keywords.Add("stop analyzing");
         keywordRecognizer = new KeywordRecognizer(keywords.ToArray(), ConfidenceLevel.Medium);
         keywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
         keywordRecognizer.Start();
@@ -94,6 +96,13 @@ public class MainMenu : MonoBehaviour
         if (args.confidence > ConfidenceLevel.Medium) return;
         switch (args.text)
         {
+            case "start analyzing":
+                if (ImageCapture.Instance.IsRecording) return;
+                ImageCapture.Instance.StartRecording();
+                break;
+            case "stop analyzing":
+                ImageCapture.Instance.ResetImageCapture();
+                break;
             case "main menu":
                 if (string.IsNullOrEmpty(currentActiveOption)) return;
                 SceneManager.UnloadSceneAsync(currentActiveOption);
