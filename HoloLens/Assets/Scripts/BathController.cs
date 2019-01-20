@@ -52,11 +52,13 @@ public class BathController : MonoBehaviour, HoloToolkit.Unity.InputModule.IInpu
             InputManager.Instance.RemoveGlobalListener(gameObject);
             SpatialMappingManager.Instance.DrawVisualMeshes = false;
         }
-        HintBox.Instance.ShowText("");
-        foreach (var item in _discs)
-        {
-            Destroy(item);
-        }
+        Destroy(HintBox.Instance.gameObject);
+        if (_discs != null)
+            foreach (var item in _discs)
+            {
+                Destroy(item);
+            }
+
     }
 
 
@@ -72,9 +74,9 @@ public class BathController : MonoBehaviour, HoloToolkit.Unity.InputModule.IInpu
     // Update is called once per frame
     void Update()
     {
-        if (GazeManager.Instance.HitPosition != Vector3.zero 
+        if (GazeManager.Instance.HitPosition != Vector3.zero
             && GazeManager.Instance.GazeNormal.y < 0.6F
-            && GazeManager.Instance.HitNormal.y > 0.9F 
+            && GazeManager.Instance.HitNormal.y > 0.9F
             && GazeManager.Instance.HitPosition.y < _floorHeight
             && GazeManager.Instance.HitInfo.distance < 2F
             )

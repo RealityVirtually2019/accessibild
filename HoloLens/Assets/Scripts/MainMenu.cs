@@ -30,13 +30,10 @@ public class MainMenu : MonoBehaviour
 
     private Dictionary<string, string> _keywordToScene = new Dictionary<string, string>();
 
-    // Use this for initialization
-    void Start()
+    private List<string> Init()
     {
-        DontDestroyOnLoad(gameObject);
         var collection = GetComponent<ObjectCollection>();
         collection.NodeList = new List<CollectionNode>();
-        SceneManager.sceneUnloaded += SceneManager_sceneUnloaded;
         List<string> keywords = new List<string>();
 
         foreach (var item in MenuEntries)
@@ -46,23 +43,18 @@ public class MainMenu : MonoBehaviour
             var btnIcon = btn.GetComponent<CompoundButtonIcon>();
             btnIcon.OverrideIcon = true;
             btnIcon.SetIconOverride(item.BtnImage);
-            foreach (var renderer in btnIcon.GetComponentsInChildren<MeshRenderer>())
-            {
-                if (renderer.gameObject.name == "UIButtonSquareIcon")
-                {
-                    renderer.sharedMaterial.SetFloat("_EnableEmission", 0F);
-                    renderer.sharedMaterial.SetFloat("_Emission", 0F);
-                    renderer.sharedMaterial.SetColor("_EmissiveColor", new Color(0f, 0f, 0f, 0f));
-                    break;
-                }
-            }
+            MeshRenderer[] meshRenderer = btnIcon.GetComponentsInChildren<MeshRenderer>();
+            ChangeButtonApperance(meshRenderer);
             collection.NodeList.Add(new CollectionNode
             {
                 Name = item.Text,
                 transform = btn.transform
             });
-            keywords.Add(MenuPreWord + item.Text);
-            _keywordToScene[MenuPreWord + item.Text] = item.SceneNameToLoad;
+            if (item.Enabled)
+            {
+                keywords.Add(MenuPreWord + item.Text);
+                _keywordToScene[MenuPreWord + item.Text] = item.SceneNameToLoad;
+            }
 
             btn.enabled = item.Enabled;
             var audioSrc = btn.gameObject.AddComponent<AudioSource>();
@@ -77,6 +69,29 @@ public class MainMenu : MonoBehaviour
         keywords.Add("main menu");
         keywords.Add("start analyzing");
         keywords.Add("stop analyzing");
+        return keywords;
+
+    }
+
+    private static void ChangeButtonApperance(MeshRenderer[] meshRenderer)
+    {
+        foreach (var renderer in meshRenderer)
+        {
+            if (renderer.gameObject.name == "UIButtonSquareIcon")
+            {
+                renderer.sharedMaterial.SetFloat("_EnableEmission", 0F);
+                renderer.sharedMaterial.SetFloat("_Emission", 0F);
+                renderer.sharedMaterial.SetColor("_EmissiveColor", new Color(0f, 0f, 0f, 0f));
+            }
+        }
+    }
+
+    // Use this for initialization
+    void Start()
+    {
+        DontDestroyOnLoad(gameObject);
+        SceneManager.sceneUnloaded += SceneManager_sceneUnloaded;
+        var keywords = Init();
         keywordRecognizer = new KeywordRecognizer(keywords.ToArray(), ConfidenceLevel.Medium);
         keywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
         keywordRecognizer.Start();
@@ -87,7 +102,32 @@ public class MainMenu : MonoBehaviour
         audioSrc.Play();
         SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
         currentActiveOption = sceneName;
-        gameObject.SetActive(false);
+        foreach (Transform item in transform)
+        {
+            item.gameObject.SetActive(false);
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.anyKeyDown)
+        {
+            var keys = new List<string>(_keywordToScene.Keys);
+            for (int i = 0; i < _keywordToScene.Count; i++)
+            {
+                if (Input.GetKeyDown("" + i))
+                {
+                    var sceneName = _keywordToScene[keys[i]];
+                    LoadMenuItem(sceneName, GetComponentInChildren<AudioSource>());
+                    return;
+                }
+            }
+            if (Input.GetKeyDown("m"))
+            {
+                if (string.IsNullOrEmpty(currentActiveOption)) return;
+                SceneManager.UnloadSceneAsync(currentActiveOption);
+            }
+        }
     }
 
     private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
@@ -120,7 +160,12 @@ public class MainMenu : MonoBehaviour
     {
         if (scene.name == currentActiveOption)
         {
-            gameObject.SetActive(true);
+            foreach (Transform item in transform)
+            {
+                item.gameObject.SetActive(true);
+            }
+            MeshRenderer[] meshRenderer = GetComponentsInChildren<MeshRenderer>();
+            ChangeButtonApperance(meshRenderer);
             currentActiveOption = String.Empty;
         }
     }
